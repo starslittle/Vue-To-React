@@ -1,0 +1,956 @@
+﻿Repository Structure for C:\Users\10245\Desktop\demo\vue3-ts-app:
+
+.gitignore
+index.html
+package.json
+public\vite.svg
+README.md
+src\App.vue
+src\assets\vue.svg
+src\components\HelloWorld.vue
+src\layout\Layout.vue
+src\main.ts
+src\router\index.ts
+src\style.css
+src\views\Dashboard.vue
+src\views\Settings.vue
+src\vite-env.d.ts
+tsconfig.app.json
+tsconfig.json
+tsconfig.node.json
+vite.config.ts
+
+
+---
+
+Complete Code:
+
+// File: .gitignore
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+---
+
+// File: index.html
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + Vue + TS</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
+
+
+---
+
+// File: package.json
+
+{
+  "name": "vue3-ts-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.1",
+    "element-plus": "^2.10.3",
+    "vue": "^3.4.0",
+    "vue-router": "^4.5.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vue/tsconfig": "^0.5.0",
+    "typescript": "~5.2.0",
+    "vite": "^5.4.0",
+    "vue-tsc": "^1.8.0"
+  }
+}
+
+
+---
+
+// File: public\vite.svg
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="31.88" height="32" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 257"><defs><linearGradient id="IconifyId1813088fe1fbc01fb466" x1="-.828%" x2="57.636%" y1="7.652%" y2="78.411%"><stop offset="0%" stop-color="#41D1FF"></stop><stop offset="100%" stop-color="#BD34FE"></stop></linearGradient><linearGradient id="IconifyId1813088fe1fbc01fb467" x1="43.376%" x2="50.316%" y1="2.242%" y2="89.03%"><stop offset="0%" stop-color="#FFEA83"></stop><stop offset="8.333%" stop-color="#FFDD35"></stop><stop offset="100%" stop-color="#FFA800"></stop></linearGradient></defs><path fill="url(#IconifyId1813088fe1fbc01fb466)" d="M255.153 37.938L134.897 252.976c-2.483 4.44-8.862 4.466-11.382.048L.875 37.958c-2.746-4.814 1.371-10.646 6.827-9.67l120.385 21.517a6.537 6.537 0 0 0 2.322-.004l117.867-21.483c5.438-.991 9.574 4.796 6.877 9.62Z"></path><path fill="url(#IconifyId1813088fe1fbc01fb467)" d="M185.432.063L96.44 17.501a3.268 3.268 0 0 0-2.634 3.014l-5.474 92.456a3.268 3.268 0 0 0 3.997 3.378l24.777-5.718c2.318-.535 4.413 1.507 3.936 3.838l-7.361 36.047c-.495 2.426 1.782 4.5 4.151 3.78l15.304-4.649c2.372-.72 4.652 1.36 4.15 3.788l-11.698 56.621c-.732 3.542 3.979 5.473 5.943 2.437l1.313-2.028l72.516-144.72c1.215-2.423-.88-5.186-3.54-4.672l-25.505 4.922c-2.396.462-4.435-1.77-3.759-4.114l16.646-57.705c.677-2.35-1.37-4.583-3.769-4.113Z"></path></svg>
+
+---
+
+// File: README.md
+
+# Vue 3 + TypeScript + Vite
+
+This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+
+Learn more about the recommended Project Setup and IDE Support in the [Vue Docs TypeScript Guide](https://vuejs.org/guide/typescript/overview.html#project-setup).
+
+
+---
+
+// File: src\App.vue
+
+<script setup lang="ts">
+// 主应用组件，通过router-view显示路由内容
+</script>
+
+<template>
+  <router-view />
+</template>
+
+<style>
+/* 全局样式 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #f5f5f5;
+}
+
+#app {
+  width: 100%;
+  height: 100vh;
+}
+</style>
+
+
+---
+
+// File: src\assets\vue.svg
+
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img" class="iconify iconify--logos" width="37.07" height="36" preserveAspectRatio="xMidYMid meet" viewBox="0 0 256 198"><path fill="#41B883" d="M204.8 0H256L128 220.8L0 0h97.92L128 51.2L157.44 0h47.36Z"></path><path fill="#41B883" d="m0 0l128 220.8L256 0h-51.2L128 132.48L50.56 0H0Z"></path><path fill="#35495E" d="M50.56 0L128 133.12L204.8 0h-47.36L128 51.2L97.92 0H50.56Z"></path></svg>
+
+---
+
+// File: src\components\HelloWorld.vue
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+defineProps<{ msg: string }>()
+
+const count = ref(0)
+</script>
+
+<template>
+  <h1>{{ msg }}</h1>
+
+  <div class="card">
+    <button type="button" @click="count++">count is {{ count }}</button>
+    <p>
+      Edit
+      <code>components/HelloWorld.vue</code> to test HMR
+    </p>
+  </div>
+
+  <p>
+    Check out
+    <a href="https://vuejs.org/guide/quick-start.html#local" target="_blank"
+      >create-vue</a
+    >, the official Vue + Vite starter
+  </p>
+  <p>
+    Learn more about IDE Support for Vue in the
+    <a
+      href="https://vuejs.org/guide/scaling-up/tooling.html#ide-support"
+      target="_blank"
+      >Vue Docs Scaling up Guide</a
+    >.
+  </p>
+  <p class="read-the-docs">Click on the Vite and Vue logos to learn more</p>
+</template>
+
+<style scoped>
+.read-the-docs {
+  color: #888;
+}
+</style>
+
+
+---
+
+// File: src\layout\Layout.vue
+
+<template>
+  <el-container class="admin-layout">
+    <!-- 侧边栏 -->
+    <el-aside width="200px" class="sidebar">
+      <div class="logo">
+        <h2>后台管理</h2>
+      </div>
+      <el-menu
+        :default-active="$route.path"
+        class="sidebar-menu"
+        background-color="#304156"
+        text-color="#bfcbd9"
+        active-text-color="#409eff"
+        router
+      >
+        <el-menu-item index="/dashboard">
+          <el-icon><DataBoard /></el-icon>
+          <span>仪表盘</span>
+        </el-menu-item>
+        <el-menu-item index="/settings">
+          <el-icon><Setting /></el-icon>
+          <span>系统设置</span>
+        </el-menu-item>
+      </el-menu>
+    </el-aside>
+
+    <!-- 主体内容 -->
+    <el-container>
+      <!-- 顶部导航栏 -->
+      <el-header class="header">
+        <div class="header-left">
+          <el-breadcrumb separator="/">
+            <el-breadcrumb-item>首页</el-breadcrumb-item>
+            <el-breadcrumb-item>{{ currentPageTitle }}</el-breadcrumb-item>
+          </el-breadcrumb>
+        </div>
+        <div class="header-right">
+          <el-dropdown>
+            <span class="user-info">
+              <el-icon><Avatar /></el-icon>
+              管理员
+              <el-icon><ArrowDown /></el-icon>
+            </span>
+            <template #dropdown>
+              <el-dropdown-menu>
+                <el-dropdown-item>个人中心</el-dropdown-item>
+                <el-dropdown-item divided>退出登录</el-dropdown-item>
+              </el-dropdown-menu>
+            </template>
+          </el-dropdown>
+        </div>
+      </el-header>
+
+      <!-- 主要内容区域 -->
+      <el-main class="main-content">
+        <router-view />
+      </el-main>
+    </el-container>
+  </el-container>
+</template>
+
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
+const currentPageTitle = computed(() => {
+  return route.meta?.title || '首页'
+})
+</script>
+
+<style scoped>
+.admin-layout {
+  height: 100vh;
+}
+
+.sidebar {
+  background-color: #304156;
+}
+
+.logo {
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-bottom: 1px solid #434a5a;
+}
+
+.logo h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.sidebar-menu {
+  border: none;
+}
+
+.header {
+  background-color: #fff;
+  border-bottom: 1px solid #e4e7ed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.header-left {
+  flex: 1;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #606266;
+  font-size: 14px;
+}
+
+.user-info .el-icon {
+  margin: 0 4px;
+}
+
+.main-content {
+  background-color: #f5f5f5;
+  padding: 20px;
+}
+</style> 
+
+---
+
+// File: src\main.ts
+
+import { createApp } from 'vue'
+import { createRouter, createWebHistory } from 'vue-router'
+import ElementPlus from 'element-plus'
+import 'element-plus/dist/index.css'
+import * as ElementPlusIconsVue from '@element-plus/icons-vue'
+import './style.css'
+import App from './App.vue'
+import { routes } from './router/index'
+
+const app = createApp(App)
+
+// 注册所有图标
+for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
+  app.component(key, component)
+}
+
+// 创建路由
+const router = createRouter({
+  history: createWebHistory(),
+  routes
+})
+
+app.use(ElementPlus)
+app.use(router)
+app.mount('#app')
+
+
+---
+
+// File: src\router\index.ts
+
+import type { RouteRecordRaw } from 'vue-router'
+import Layout from '../layout/Layout.vue'
+import Dashboard from '../views/Dashboard.vue'
+import Settings from '../views/Settings.vue'
+
+export const routes: Array<RouteRecordRaw> = [
+  {
+    path: '/',
+    redirect: '/dashboard',
+    component: Layout,
+    children: [
+      {
+        path: '/dashboard',
+        name: 'Dashboard',
+        component: Dashboard,
+        meta: { title: '仪表盘', icon: 'DataBoard' }
+      },
+      {
+        path: '/settings',
+        name: 'Settings',
+        component: Settings,
+        meta: { title: '系统设置', icon: 'Setting' }
+      }
+    ]
+  }
+] 
+
+---
+
+// File: src\style.css
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.card {
+  padding: 2em;
+}
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+
+
+---
+
+// File: src\views\Dashboard.vue
+
+<template>
+  <div class="dashboard">
+    <h1>仪表盘</h1>
+    
+    <!-- 统计卡片 -->
+    <el-row :gutter="20" class="stats-row">
+      <el-col :span="6">
+        <el-card class="stats-card">
+          <div class="stats-content">
+            <div class="stats-icon">
+              <el-icon color="#409eff" size="40px"><User /></el-icon>
+            </div>
+            <div class="stats-info">
+              <div class="stats-title">用户总数</div>
+              <div class="stats-value">1,234</div>
+            </div>
+          </div>
+        </el-card>
+      </el-col>
+      
+      <el-col :span="6">
+        <el-card class="stats-card">
+          <div class="stats-content">
+            <div class="stats-icon">
+              <el-icon color="#67c23a" size="40px"><ShoppingCart /></el-icon>
+            </div>
+            <div class="stats-info">
+              <div class="stats-title">订单总数</div>
+              <div class="stats-value">5,678</div>
+            </div>
+          </div>
+        </el-card>
+      </el-col>
+      
+      <el-col :span="6">
+        <el-card class="stats-card">
+          <div class="stats-content">
+            <div class="stats-icon">
+              <el-icon color="#e6a23c" size="40px"><Money /></el-icon>
+            </div>
+            <div class="stats-info">
+              <div class="stats-title">销售额</div>
+              <div class="stats-value">¥123,456</div>
+            </div>
+          </div>
+        </el-card>
+      </el-col>
+      
+      <el-col :span="6">
+        <el-card class="stats-card">
+          <div class="stats-content">
+            <div class="stats-icon">
+              <el-icon color="#f56c6c" size="40px"><TrendCharts /></el-icon>
+            </div>
+            <div class="stats-info">
+              <div class="stats-title">增长率</div>
+              <div class="stats-value">+12.5%</div>
+            </div>
+          </div>
+        </el-card>
+      </el-col>
+    </el-row>
+
+    <!-- 图表区域 -->
+    <el-row :gutter="20" class="charts-row">
+      <el-col :span="12">
+        <el-card>
+          <template #header>
+            <div class="card-header">
+              <span>用户增长趋势</span>
+            </div>
+          </template>
+          <div class="chart-placeholder">
+            <el-icon size="60px" color="#c0c4cc"><TrendCharts /></el-icon>
+            <p>图表区域 - 可集成 ECharts</p>
+          </div>
+        </el-card>
+      </el-col>
+      
+      <el-col :span="12">
+        <el-card>
+          <template #header>
+            <div class="card-header">
+              <span>销售数据分析</span>
+            </div>
+          </template>
+          <div class="chart-placeholder">
+            <el-icon size="60px" color="#c0c4cc"><Histogram /></el-icon>
+            <p>图表区域 - 可集成 ECharts</p>
+          </div>
+        </el-card>
+      </el-col>
+    </el-row>
+
+    <!-- 最近活动 -->
+    <el-card>
+      <template #header>
+        <div class="card-header">
+          <span>最近活动</span>
+        </div>
+      </template>
+      
+      <el-table :data="recentActivities" style="width: 100%">
+        <el-table-column prop="time" label="时间" width="180" />
+        <el-table-column prop="user" label="用户" width="120" />
+        <el-table-column prop="action" label="操作" />
+        <el-table-column prop="status" label="状态" width="100">
+          <template #default="scope">
+            <el-tag
+              :type="scope.row.status === '成功' ? 'success' : 'warning'"
+            >
+              {{ scope.row.status }}
+            </el-tag>
+          </template>
+        </el-table-column>
+      </el-table>
+    </el-card>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { ref } from 'vue'
+
+// 最近活动数据
+const recentActivities = ref([
+  {
+    time: '2024-01-08 10:30:00',
+    user: '张三',
+    action: '登录系统',
+    status: '成功'
+  },
+  {
+    time: '2024-01-08 10:25:00',
+    user: '李四',
+    action: '更新用户信息',
+    status: '成功'
+  },
+  {
+    time: '2024-01-08 10:20:00',
+    user: '王五',
+    action: '删除文件',
+    status: '失败'
+  },
+  {
+    time: '2024-01-08 10:15:00',
+    user: '赵六',
+    action: '创建新订单',
+    status: '成功'
+  }
+])
+</script>
+
+<style scoped>
+.dashboard {
+  padding: 0;
+}
+
+.dashboard h1 {
+  margin-bottom: 20px;
+  color: #303133;
+}
+
+.stats-row {
+  margin-bottom: 20px;
+}
+
+.stats-card {
+  height: 120px;
+}
+
+.stats-content {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.stats-icon {
+  margin-right: 20px;
+}
+
+.stats-info {
+  flex: 1;
+}
+
+.stats-title {
+  font-size: 14px;
+  color: #909399;
+  margin-bottom: 8px;
+}
+
+.stats-value {
+  font-size: 24px;
+  font-weight: bold;
+  color: #303133;
+}
+
+.charts-row {
+  margin-bottom: 20px;
+}
+
+.chart-placeholder {
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #c0c4cc;
+}
+
+.chart-placeholder p {
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+</style> 
+
+---
+
+// File: src\views\Settings.vue
+
+<template>
+  <div class="settings">
+    <h1>系统设置</h1>
+    
+    <!-- 基本设置 -->
+    <el-card class="setting-card">
+      <template #header>
+        <div class="card-header">
+          <span>基本设置</span>
+        </div>
+      </template>
+      
+      <el-form :model="settingsForm" label-width="120px">
+        <el-form-item label="系统名称">
+          <el-input 
+            v-model="settingsForm.systemName" 
+            placeholder="请输入系统名称"
+            style="width: 300px;"
+          />
+        </el-form-item>
+        
+        <el-form-item label="系统描述">
+          <el-input 
+            v-model="settingsForm.systemDescription" 
+            type="textarea"
+            :rows="3"
+            placeholder="请输入系统描述"
+            style="width: 400px;"
+          />
+        </el-form-item>
+        
+        <el-form-item label="主题模式">
+          <el-radio-group v-model="settingsForm.theme">
+            <el-radio value="light">浅色模式</el-radio>
+            <el-radio value="dark">深色模式</el-radio>
+          </el-radio-group>
+        </el-form-item>
+        
+        <el-form-item label="语言设置">
+          <el-select v-model="settingsForm.language" style="width: 200px;">
+            <el-option label="简体中文" value="zh-CN" />
+            <el-option label="English" value="en-US" />
+          </el-select>
+        </el-form-item>
+        
+        <el-form-item label="自动保存">
+          <el-switch v-model="settingsForm.autoSave" />
+          <span class="setting-desc">开启后系统将自动保存用户操作</span>
+        </el-form-item>
+        
+        <el-form-item label="消息通知">
+          <el-switch v-model="settingsForm.notification" />
+          <span class="setting-desc">开启后将接收系统通知消息</span>
+        </el-form-item>
+        
+        <el-form-item>
+          <el-button type="primary" @click="handleSave">
+            <el-icon><Check /></el-icon>
+            保存设置
+          </el-button>
+          <el-button @click="handleReset">
+            <el-icon><RefreshLeft /></el-icon>
+            重置为默认
+          </el-button>
+        </el-form-item>
+      </el-form>
+    </el-card>
+
+    <!-- 系统信息 -->
+    <el-card class="setting-card">
+      <template #header>
+        <div class="card-header">
+          <span>系统信息</span>
+        </div>
+      </template>
+      
+      <el-descriptions :column="2" border>
+        <el-descriptions-item label="系统版本">v1.0.0</el-descriptions-item>
+        <el-descriptions-item label="框架版本">Vue 3.4.0</el-descriptions-item>
+        <el-descriptions-item label="UI组件">Element Plus</el-descriptions-item>
+        <el-descriptions-item label="开发语言">TypeScript</el-descriptions-item>
+        <el-descriptions-item label="构建工具">Vite</el-descriptions-item>
+        <el-descriptions-item label="最后更新">2024-01-08</el-descriptions-item>
+      </el-descriptions>
+    </el-card>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { reactive } from 'vue'
+import { ElMessage } from 'element-plus'
+
+// 设置表单
+const settingsForm = reactive({
+  systemName: '后台管理系统',
+  systemDescription: '基于Vue3 + TypeScript + Element Plus构建的现代化后台管理系统',
+  theme: 'light',
+  language: 'zh-CN',
+  autoSave: true,
+  notification: true
+})
+
+// 默认设置
+const defaultSettings = {
+  systemName: '后台管理系统',
+  systemDescription: '基于Vue3 + TypeScript + Element Plus构建的现代化后台管理系统',
+  theme: 'light',
+  language: 'zh-CN',
+  autoSave: true,
+  notification: true
+}
+
+// 保存设置
+const handleSave = () => {
+  // 这里可以调用API保存到后端
+  localStorage.setItem('systemSettings', JSON.stringify(settingsForm))
+  ElMessage.success('设置保存成功')
+}
+
+// 重置设置
+const handleReset = () => {
+  Object.assign(settingsForm, defaultSettings)
+  ElMessage.info('已重置为默认设置')
+}
+</script>
+
+<style scoped>
+.settings h1 {
+  margin-bottom: 20px;
+  color: #303133;
+}
+
+.setting-card {
+  margin-bottom: 20px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.setting-desc {
+  margin-left: 10px;
+  font-size: 12px;
+  color: #909399;
+}
+</style> 
+
+---
+
+// File: src\vite-env.d.ts
+
+/// <reference types="vite/client" />
+
+
+---
+
+// File: tsconfig.app.json
+
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.vue"]
+}
+
+
+---
+
+// File: tsconfig.json
+
+{
+  "files": [],
+  "references": [
+    { "path": "./tsconfig.app.json" },
+    { "path": "./tsconfig.node.json" }
+  ]
+}
+
+
+---
+
+// File: tsconfig.node.json
+
+{
+  "compilerOptions": {
+    "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.node.tsbuildinfo",
+    "target": "ES2023",
+    "lib": ["ES2023"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+
+    /* Linting */
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true
+  },
+  "include": ["vite.config.ts"]
+}
+
+
+---
+
+// File: vite.config.ts
+
+import { defineConfig } from 'vite'
+import vue from '@vitejs/plugin-vue'
+
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [vue()],
+})
+
