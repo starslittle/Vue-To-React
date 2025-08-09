@@ -1,0 +1,127 @@
+.card-list-container {
+  padding: 24px;
+  position: relative;
+}
+
+.select-all-button {
+  margin-bottom: 16px;
+}
+
+.custom-card {
+  height: 180px;
+  overflow: hidden;
+}
+
+.card-wrapper {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.select-checkbox {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  z-index: 2;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 4px;
+}
+
+.image-container {
+  position: relative;
+  flex-grow: 1; /* 让图片容器占据剩余空间 */
+  min-height: 0; /* 允许 flex item 收缩 */
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; /* 保证图片完整显示 */
+}
+
+.eye-icon {
+  position: absolute;
+  top: 0px;
+  right: 3px;
+  font-size: 24px;
+  color: rgb(255, 254, 254);
+  padding: 5px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.eye-icon:hover {
+  color: #b5b8bc; /* 悬停时变为蓝色 */
+}
+
+.text-content {
+  padding: 4px 12px; 
+  flex-shrink: 0; 
+  background-color: #fff;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  min-height: 24px; 
+}
+
+.text-content p {
+  margin: 0;
+}
+```
+
+```markdown
+# React项目结构调整说明
+
+## 主要改动点：
+
+1. **依赖项变更**
+   - 将`ant-design-vue`替换为`ant-design`
+   - 将`@ant-design/icons-vue`替换为`@ant-design/icons`
+   - 添加`react`和`react-dom`依赖
+   - 添加TypeScript的React类型支持
+
+2. **配置文件变更**
+   - 更新`vite.config.ts`使用`@vitejs/plugin-react`
+   - 更新`tsconfig.json`添加JSX支持
+
+3. **组件转换**
+   - `.vue`文件转换为`.tsx`文件
+   - Vue组件转换为React函数组件
+   - Vue响应式系统转换为React Hooks（useState）
+   - Vue模板语法转换为JSX语法
+
+4. **样式保持**
+   - 原CSS样式保持不变
+   - 使用相同的CSS类名保持样式一致性
+
+5. **构建流程**
+   - 使用React官方推荐的构建方式
+   - 保持与原项目相同的目录结构
+
+## React项目结构
+
+```
+├── index.html
+├── package-lock.json
+├── package.json
+├── public
+│   └── vite.svg
+├── README.md
+├── src
+│   ├── App.tsx
+│   │   └── ImageCardList.tsx
+│   ├── assets
+│   │   └── vue.svg
+│   ├── components
+│   │   └── ImageCardList.tsx
+│   ├── main.tsx
+│   ├── style.css
+│   └── vite-env.d.ts
+├── tsconfig.app.json
+├── tsconfig.json
+├── tsconfig.node.json
+└── vite.config.ts
+```

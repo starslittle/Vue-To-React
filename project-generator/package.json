@@ -1,0 +1,12 @@
+{
+  "name": "project-generator-service",
+  "version": "1.0.0",
+  "description": "A Node.js service to generate a React project from a text file.",
+  "main": "project-generator.js",
+  "scripts": {
+    "start": "node project-generator.js"
+  },
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+} 
